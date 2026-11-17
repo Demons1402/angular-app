@@ -1,0 +1,57 @@
+<section id="contact" class="...">
+  <p class="text-muted mb-0">
+    Cuéntanos qué necesitas y te responderemos en menos de 24 horas.
+  </p>
+
+  <form [formGroup]="formulario" (ngSubmit)="envio()">
+    <!-- Nombre -->
+    <label class="form-label" for="nombre">Nombre</label>
+    <input 
+      id="nombre" 
+      class="form-control" 
+      formControlName="nombre" 
+      [class.is-invalid]="invalido('nombre')"
+    >
+    @if (invalido('nombre')) {
+      <div class="invalid-feedback">Escribe tu nombre</div>
+    }
+
+    <!-- Correo -->
+    <label class="form-label" for="correo">Correo</label>
+    <input 
+      id="correo" 
+      class="form-control" 
+      formControlName="correo" 
+      [class.is-invalid]="invalido('correo')"
+    >
+    @if (invalido('correo')) {
+      <div class="invalid-feedback">Ingresa un correo válido</div>
+    }
+
+    <label class="form-label" for="numero">Número</label>
+    <input 
+      id="numero" 
+      class="form-control" 
+      formControlName="numero" 
+      [class.is-invalid]="invalido('numero')"
+    >
+        @if (invalido('numero')) {
+      <div class="invalid-feedback">Ingresa tu numero</div>
+    }
+
+    <label class="form-label" for="comentario">Comentario</label>
+    <textarea 
+      id="comentario" 
+      class="form-control" 
+      formControlName="comentario" 
+      [class.is-invalid]="invalido('comentario')"
+    ></textarea>
+        @if (invalido('comentario')) {
+      <div class="invalid-feedback">Ingresa un</div>
+    }
+
+    <button type="submit" class="btn btn-primary w-100 py-2 mt-3">
+      Enviar mensaje
+    </button>
+  </form>
+</section>

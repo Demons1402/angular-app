@@ -1,0 +1,15 @@
+<p>comentarios works!</p>
+
+<div class="carrusel-item">
+    @for(comentario of comentarios(); track comentario.id){
+    <div class="card mx-auto">
+       <div class="card-body text-center"> 
+            <p class="card-text">{{comentario.body}}</p>
+            <p class="mb-0">
+                <strong>{{comentario.name}}</strong>
+            </p>
+            <small class="text-muted">{{comentario.email}}</small>
+        </div>
+    </div>
+    }
+</div>

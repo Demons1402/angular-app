@@ -1,0 +1,64 @@
+<h1>Ejemplos de Interpolacion</h1>
+
+<!--Interpolacion : mostrar un valor dinamico -->
+<p>Hola soy {{ nombre }} {{apellidoPaterno}} {{apellidoMaterno}} tengo {{edad}} años,
+     y nací el {{mesNacimiento}} y soy de {{municipio}}  estudio {{carrera}}</p>
+
+<p>Eres estudiante ? {{esEstudiante ? 'Si soy' : 'No soy'}}</p>     
+
+<p>Tienes hijos ? {{hijos ? 'si 32 *calaberita*' : 'no :V'}}</p>
+<p>Tienes instagram ? {{ig ? 'si es @hola_xd' : 'no,asco'}}</p>
+<p>Tienes facebook ? {{face ? 'si es hola_xd' : 'no,asco'}}</p>
+<p>Tienes github ? {{github ? 'si es nepogod' : 'no'}}</p>
+<p>Eres feliz ? {{feliz ? 'si(no)' : 'no'}}</p>
+
+
+<!--Que se muestra y que no-->
+@if(esEstudiante){
+     <strong>Soy estudiante de {{carrera}}</strong>
+}@else{
+<h3>No estoy trabajando</h3>
+}
+<br>
+<br>
+<h1>Mis gustos</h1>
+<ul>
+  @for(gusto of gustos; track gusto){
+    <li>{{gusto}}</li>
+  }
+</ul>
+
+<h1>Mis juegos favoritos</h1>
+<ol>
+  @for(juego of juegos; track juego){
+    <li>{{juego}}</li>
+  }
+</ol>
+
+<h1>Mis deportes favoritos</h1>
+<ul>
+  @for(deporte of deportes; track deporte){
+    <li>{{deporte}}</li>
+  }
+</ul>
+
+<h1>Mis jugadores favoritos</h1>
+
+  @for(jugador of jugadores; track jugador){
+    <h6>{{jugador}}</h6>
+  }
+
+
+<h1>Mis famosos favoritos</h1>
+<ul>
+  @for(famoso of famosos; track famoso){
+    <li>{{famoso}}</li>
+  }
+</ul>
+
+<h1>Mis comidas favoritas</h1>
+<ol>
+  @for(comida of comidas; track comida){
+    <li>{{comida}}</li>
+  }
+</ol>
